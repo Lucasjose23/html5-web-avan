@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso HTML5 Avançado</title>
+        
+        <script src="cake.js"></script>     
+        <script>
+            function desenhar()
+            {
+                var canvas=new Canvas(document.body,600,400);
+                var meuCirculo=new Circle(100,{
+                    id:'meuCirculo',
+                    x: canvas.width/2,
+                    y: canvas.height/2,
+                    stroke:'blue',
+                    strokeWidth:10,
+                    endAngle:Math.PI*2
+                                              
+                });
+                meuCirculo.addFrameListener(
+                    function(t,dt){
+                        this.scale=Math.sin(t/500);
+                        
+                    }//t e o tempo
+                    
+                );//animaçao de esdscala
+                canvas.append(meuCirculo);//coloca o circulo no canvas
+                
+            }
+            window.onload=desenhar;//atribuindo a um evento nao precisa do abre e fecha
+			
+		</script>
+    </head>
+    
+    <body>
+        <h1>curso de html avançãdo</h1>
+	</body>    
+</html>
